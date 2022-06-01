@@ -1,0 +1,253 @@
+	@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap");
+	@import url(https://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+	html,body{
+	    width: 100%;
+	    margin: 0%;
+	    padding: 0%;
+	    font-family: 'Noto Sans TC',sans-serif !important;
+	}
+	main{
+	    height: 100vh;
+	    background-color: black;
+	}
+	#MonsterHP{
+	    height: 5vh;
+			background: linear-gradient( 90deg,
+									rgb(89, 184, 0) 0% , rgb(89, 184, 0) 100%,
+						 			white 100%, white 100% );
+	    width: 50%;
+	    position:relative;
+	    top:10vh;
+	    margin-left: auto;
+	    margin-right:auto;
+	    text-align: center;
+	    border-radius: 50px;
+	}
+	#MonsterATK{
+		color:white;
+		position:absolute;
+		top:5vh;
+		left:25%;
+		text-align: center;
+	}
+	#PlayerHP{
+	    height: 5vh;
+			background: linear-gradient( 90deg,
+									rgb(89, 184, 0) 0% , rgb(89, 184, 0) 100%,
+									white 100%, white 100% );
+	    width: 50%;
+	    position:absolute;
+	    bottom:10vh;
+			left:25%;
+	    margin-left: auto;
+	    margin-right:auto;
+	    text-align: center;
+	    border-radius: 50px;
+	}
+	#PlayerATK{
+		color:white;
+		position:absolute;
+		bottom:15vh;
+		left:25%;
+		text-align: center;
+	}
+	.monsterPicture{
+		height: 50vh;
+		position: absolute;
+		left:20%;
+		bottom: 25%;
+	}
+	.attack{
+		animation-name:hurt;
+	  animation-duration:1s;
+	}
+	@keyframes hurt {
+		100%{
+			filter: sepia() saturate(4) hue-rotate(295deg);
+		}
+	}
+	.questions{
+	    width: 100%;
+	    height: 100vh;
+	    position: absolute;
+	    bottom: 0;
+	    display: grid;
+	    grid-template-rows: 25% 75%;
+	    grid-template-areas:"questions",
+	                        "options";
+	}
+	#showQuestion{
+	    width: 100%;
+	    /* background: linear-gradient(37deg, #ebe26c, #89da2c); */
+	    /* background: linear-gradient(to top, #deebeb, #f0ea97); */
+	    background-color: gray;
+	    height: 100%;
+	    grid-area: "questions";
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
+	#showOptions{
+	    background-color: lightgray;
+	    display: grid;
+	    grid-template-columns: repeat(2,1fr);
+	    grid-template-rows: repeat(2,1fr);
+	    grid-row-gap: 50px;
+	    grid-column-gap: 50px;
+	    grid-template-areas: "a b",
+	                         "c d";
+	}
+	#showOptions :nth-child(1){
+	    grid-area: "a";
+	}
+	#showOptions :nth-child(2){
+	    grid-area: "b";
+	}
+	#showOptions :nth-child(3){
+	    grid-area: "c";
+	}
+	#showOptions :nth-child(4){
+	    grid-area: "d";
+	}
+	.option{
+	    width: 20vw;
+	    height: 15vh;
+	    margin-left: auto;
+	    margin-right: auto;
+	    margin-top: 5vh;
+	    border-radius: 50px;
+	    font-size: 30px;
+	    font-family: "cwTeXYen", sans-serif;
+	}
+
+
+	.drops{
+		height: 10vh;
+		width:10vw;
+		text-align: center;
+		line-height: 10vh;
+		position:absolute;
+		bottom:-1vh;
+		right:0vw;
+		background-color: orange;
+		border-top-left-radius: 25px;
+	}
+
+	#toggler:checked ~ .nav_bar{
+		transition: transform .2s ease-in-out;
+		transform: scaleY(1);
+	}
+	.nav_bar{
+		position: relative;
+		bottom: 25vh;
+		transform:scaleY(0);
+		height: 15vh;
+		width: 100%;
+		transform-origin: 100% 100%;
+		transition: transform .2s ease-in-out;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+		background-color: black;
+		opacity: 0.7;
+	}
+	.drop{
+		height:100%;
+	}
+	.drop img{
+		position:absolute;
+	}
+	#atkDrop{
+		height:100px;
+		width:80px;
+		bottom:10vh;
+		left:5vw;
+	}
+	#hpDrop{
+		bottom:4vh;
+		height:110px;
+		width:80px;
+		bottom:10vh;
+		left:15vw;
+	}
+	#damageDownDrop{
+		bottom:5vh;
+		height:100px;
+		width:80px;
+		bottom:10vh;
+		left:25vw;
+	}
+	span[showAtkDropNums]:after{
+		content: "+40%攻擊  剩餘:" attr(showAtkDropNums);
+		color:white;
+		position:absolute;
+		left:9%;
+		bottom:2vh;
+		width:80px;
+	}
+	span[showHpDropNums]:after{
+		content: "恢復40%生命  剩餘:" attr(showHpDropNums);
+		color:white;
+		position:absolute;
+		left:25%;
+		width:100px;
+		bottom:2vh;
+	}
+	span[showDamageDownDropNums]:after{
+		content: "40%傷害減免  剩餘:" attr(showDamageDownDropNums);
+		color:white;
+		position:absolute;
+		left:42%;
+		width:100px;
+		bottom:2vh;
+	}
+
+
+
+
+	.showResult{
+		transition: 1s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    width:40vw;
+    height:80vh;
+    background-color: brown;
+    color:white;
+    position:absolute;
+    left:30%;
+    top:10%;
+		border-radius: 25px;
+	}
+	.addAnimation{
+		animation:showResultAnimation;
+		animation-duration: 1s;
+		transition-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+	}
+	@keyframes showResultAnimation {
+			100%{
+				opacity: 1;
+		    visibility: visible;
+		    z-index: 10;
+			}
+	}
+	.loot{
+	    width: 100%;
+	    height: 30%;
+	    text-align: center;
+	    margin-left:auto;
+	    margin-right:auto;
+	    margin-top: 10%;
+			font-size: 5vh;
+	}
+	#backToHomepage{
+		outline: none;
+		border:none;
+		width:10vw;
+		height:5vh;
+		position: absolute;
+		bottom:10vh;
+		right:15vw;
+		border-radius: 25px;
+	}

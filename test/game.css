@@ -1,0 +1,65 @@
+main{
+	width: 1000px;
+	height: 80vh;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+.windows{
+	width: 1000px;
+	height: 80vh;
+	padding:20px;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	background-image: url('bgc.jpeg');
+	background-repeat: no-repeat;
+	background-size: 1000px 80vh;
+}
+.hp{
+	display:flex;
+	justify-content: space-between;
+}
+#PlayerHp,#MonsterHp{
+	width: 400px;
+	height: 50px;
+	border: 2px solid black;
+}
+.player,.monster{
+	width: 200px;
+	height: 40vh;
+	border: 2px solid black;
+	text-align: center;
+}
+.pic , .pic1{
+	width: 14vw;
+	height: 40vh;
+	background-color: transparent;
+	position:relative;
+}
+#PlayerAtk,#MonsterAtk{
+	width: 100px;
+	height: 50px;
+	position: absolute;
+}
+#PlayerAtk{
+	left:230px;
+}
+#MonsterAtk{
+	left:730px;
+}
+.attackAnimation{
+	animation: attack ease-in-out 1.5s;
+}
+@keyframes attack {
+	0%{
+		left:0px;
+	}
+	100%{
+		left:300px;
+		content:url( "");
+	}
+
+}

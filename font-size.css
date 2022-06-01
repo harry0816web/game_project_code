@@ -1,0 +1,9 @@
+
+    @media (min-width:800px) {
+      *{
+        font-size:40px;
+      }
+      #account::placeholder,#password::placeholder{
+        font-size:40px;
+      }
+    }

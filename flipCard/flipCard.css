@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+.wordCard{
+    height:85vh;
+    width:30vw;
+    position:absolute;
+    top:5vh;
+    left:35vw;
+    background-color: white;
+}
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 3000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	height:85vh;
+  width:30vw;
+  background-color: white;
+
+  border-radius:20px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+.learnSucceed{
+  width:50vw;
+  height:100vh;
+  position:absolute;
+  right:0px;
+  background-color: rgb(109, 249, 149);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.learnFail{
+  width:50vw;
+  height:100vh;
+  position:absolute;
+  left:0;
+  background-color: rgb(255, 96, 96);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.learnTEXT{
+  background-color:black;
+  color:white;
+  width:auto;
+  font-size:400%;
+}

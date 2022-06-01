@@ -1,0 +1,41 @@
+*{
+  font-size:2vh;
+}
+ main{
+  height:77vh;
+  width: 72vw;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+.shop{
+  height: 60vh;
+  width: 35vw;
+  border-radius: 25px;
+  background-color: lightgray;
+  box-shadow: 0px 0px 100px 2px gray;
+  display: flex;
+  padding:5px;
+  position:relative;
+  bottom:2vh;
+}
+.dropsTable{
+    width:100%;
+    height: 65%;
+    text-align: center;
+    position: absolute;
+    top:7vh;
+    right:1vw;
+}
+.submit{
+  position: absolute;
+  bottom:7%;
+  right:5%;
+}
+.showCoin{
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  bottom:0;
+  left:25%;
+}

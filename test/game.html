@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="game.css">
+    </head>
+    <body>
+        <main>
+            <div class="windows">
+                <header class="hp">
+                    <div id="PlayerHp"></div>
+                    <div id="MonsterHp"></div>
+                </header>
+                <div class="player">
+                    <img src="man.png" class="pic1 pic2" id ="pic1">
+                    <div class="attr">
+                        <h1>hp:<span id="player_hp">50</span></h1>
+                        <h1>atk:<span id="player_atk">10</span></h1>
+                    </div>
+                </div>
+                <div class="monster">
+                    <img src="monster.png" class="pic">
+                    <div class="attr">
+                        <h1>hp:<span id="monster_hp">50</span></h1>
+                        <h1>atk:<span id="monster_atk">10</span></h1>
+                    </div>
+                </div>
+            </div>
+            <!-- <button id="PlayerAtk">攻擊</button>
+            <button id="MonsterAtk">攻擊</button> -->
+        </main>
+        <script src="game.js"></script>
+    </body>
+</html>
